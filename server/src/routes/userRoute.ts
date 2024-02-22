@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import User from '../models/userModel';
+import User from '../models/User';
 
 const router = express.Router();
 
@@ -24,13 +24,17 @@ router.get('/:id', async (req: Request, res: Response) => {
 });
 
 // create new user
-router.post('/signup', async (req: Request, res: Response) => {
-  const { firstName, lastName, description } = req.body;
+router.post('/', async (req: Request, res: Response) => {
+  const { firstName, lastName, username, email, password, avatar, userType } = req.body;
   try {
     const newUser = new User({
       firstName,
       lastName,
-      description,
+      username,
+      email,
+      password,
+      avatar,
+      userType
     });
     const savedUser = await newUser.save();
     res.status(201).json(savedUser);
