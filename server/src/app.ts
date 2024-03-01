@@ -15,8 +15,8 @@ app.use(express.json());
 // Define routes
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
-app.use('/api/creator', creatorRoute);
-app.use('/api/brand', brandRoute);
+app.use('/api/creators', creatorRoute);
+app.use('/api/brands', brandRoute);
 
 console.log("App is running");
 
