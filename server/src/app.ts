@@ -1,9 +1,9 @@
 import express from "express";
 import { config } from 'dotenv';
 import userRoute from './routes/userRoute';
-import queriesRoute from './routes/queriesRoute';
 import authRoute from './routes/authRoute';
 import creatorRoute from './routes/creatorRoute';
+import brandRoute from './routes/brandRoute';
 
 config();
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/creator', creatorRoute);
-app.use('/api/query', queriesRoute);
+app.use('/api/brand', brandRoute);
 
 console.log("App is running");
 
